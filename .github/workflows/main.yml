@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        model: [ "G970F,G973F,G975F"]
+        model: [ "G970F,G973F,G975F,G970N,G973N,G975N,G977B,G977N","N970F,N975F,N971N,N976B,N976N"]
 
     steps:
       - uses: actions/checkout@v2
@@ -26,7 +26,7 @@ jobs:
           set -e -o pipefail
           ./cruelbuild config                    \
                        model=${{ matrix.model }} \
-                       name="SebastianSNRL-Kernel v1.0"         \
+                       name="SebastianSNRL v1.0" \
                        toolchain=$TOOLCHAIN      \
                        +magisk                   \
                        +nohardening              \
