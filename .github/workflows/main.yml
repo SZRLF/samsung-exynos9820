@@ -26,7 +26,7 @@ jobs:
           set -e -o pipefail
           ./cruelbuild config                    \
                        model=${{ matrix.model }} \
-                       name="Z"         \
+                       name="SebastianSNRL-Kernel v1.0"         \
                        toolchain=$TOOLCHAIN      \
                        +magisk                   \
                        +nohardening              \
@@ -38,6 +38,8 @@ jobs:
                        +force_dex_wqhd           \
                        +morosound                \
                        +boeffla_wl_blocker       \
+                       +fp_boost                 \
+                       +usb_serial               \
           2>&1 | tee config.info
 
       - name: Install gcc-aarch64-linux-gnu
